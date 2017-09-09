@@ -5,7 +5,7 @@ https://www.overleaf.com/10938202dcjjwssrzwgn#/41166485/
 ## Asignación
 
 Parte 1
-
+```{text}
 1) 2) y 3) Ale
 4) 5) 6) Alva
 
@@ -17,3 +17,4 @@ Parte 2
 
 Parte 3
 1) 2) 3) Toni
+```
