@@ -4,8 +4,9 @@ https://www.overleaf.com/10938202dcjjwssrzwgn#/41166485/
 
 ## Asignación
 
-Parte 1
+
 ```{text}
+Parte 1
 1) 2) y 3) Ale
 4) 5) 6) Alva
 
