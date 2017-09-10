@@ -17,5 +17,5 @@ Parte 2
 6) 7) 8) Toni
 
 Parte 3
-1) 2) 3) Toni
+1) 2) 3) Andres
 ```
