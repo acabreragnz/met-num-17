@@ -43,6 +43,8 @@ L_trans = L';
 % L'x = y   % sustitucion hacia atras
 
 y = sustitucion_hacia_adelante(L, P * b);
-x = sustitucion_hacia_atras(L_trans, y)(p);
+x = sustitucion_hacia_atras(L_trans, y);
 
 toc();
+
+x = inv(P) * x;
