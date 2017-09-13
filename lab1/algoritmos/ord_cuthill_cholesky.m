@@ -17,8 +17,8 @@ function [x, p, H] = ord_cuthill_cholesky(A, b, do_spy)
   PAPt = A(p, p);
 
   % cholesky decomposition H to P * A * P'
-  L = chol(PAPt)';
-  L_trans = L';
+  L_trans = chol(PAPt);
+  L = L_trans;
 
   % the equivalent problem to Ax=b
   % is (P * A * P')(Px) = Pb
