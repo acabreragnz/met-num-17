@@ -7,9 +7,7 @@ function x = eg(A, b)
       L(i, k) = A(i, k) / A(k, k);
       A(i, k) = 0;
       b(i) = b(i) - L(i,k) * b(k);
-      for j=k+1:n
-        A(i,j) = A(i,j) - L(i, k) * A(k,j);
-      end
+      A(i, (k+1):n) = A(i, (k+1):n) - L(i, k) * A(k, (k+1):n);
     end
   end
 
