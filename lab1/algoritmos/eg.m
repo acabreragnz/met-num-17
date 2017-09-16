@@ -13,7 +13,5 @@ function x = eg(A, b)
     end
   end
 
-  A
-  L
   x = sustitucion_hacia_atras(A, b);
 end
