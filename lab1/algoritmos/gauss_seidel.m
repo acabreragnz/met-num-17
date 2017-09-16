@@ -1,4 +1,6 @@
-function [x_sol, cant_iter, error_sol, ] = gauss_seidel(A, b, x0, max_iter, tol_estancamiento, tol_residuo)
+function [x_sol, cant_iter, xk_suc] = gauss_seidel(A, b, x0, max_iter, tolerancia)
+  more off;
+
   if nargin ~= 5
     error('Ingrese todos los parametros');
   end
@@ -13,8 +15,9 @@ function [x_sol, cant_iter, error_sol, ] = gauss_seidel(A, b, x0, max_iter, tol_
   x_anterior = x0;
   xk = zeros(n, 1);
   error_absoluto = inf;
+  xk_suc = []
 
-  while (k < max_iter & error_estancamiento > tol_estancamiento & error_sol > tol_residuo)
+  while (k < max_iter & error_absoluto > tolerancia)
 
     # calculo de jacobi en filas
     for i = 1:n
@@ -36,10 +39,10 @@ function [x_sol, cant_iter, error_sol, ] = gauss_seidel(A, b, x0, max_iter, tol_
     k++;
 
     # actualizacion de condicion y solucion
-    error_estancamiento = norm(xk - x_anterior);
-    error_residuo = norm(A * xk - b);
+    error_absoluto = norm(A * xk - b)
 
     x_anterior = xk;
+    xk_suc = [xk_suc, xk];
   end
 
   cant_iter = k;
