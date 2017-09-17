@@ -15,7 +15,7 @@ function [x_sol, cant_iter, xk_suc] = gauss_seidel(A, b, x0, w, max_iter, tolera
   x_anterior = x0;
   xk = zeros(n, 1);
   error_absoluto = inf;
-  xk_suc = []
+  xk_suc = [];
 
   while (k < max_iter & error_absoluto > tolerancia)
 
