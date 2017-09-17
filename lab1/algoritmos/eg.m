@@ -4,7 +4,6 @@ function x = eg(A, b)
 
   %eg
   for k=1:n-1
-
     max = 0;
     indexMax = 0;
 
@@ -14,16 +13,10 @@ function x = eg(A, b)
         indexMax = r;
       end
     end
-    A
-    indexMax
-    k
-    max
 
     %swap de filas
     A([indexMax, k], :) = A([k, indexMax], :);
     b([indexMax, k]) = b([k, indexMax]);
-    A
-    b
 
     for i=k+1:n
       L(i, k) = A(i, k) / A(k, k);
