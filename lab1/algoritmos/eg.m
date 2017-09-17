@@ -1,5 +1,5 @@
 function x = eg(A, b)
-  n = rank(A);
+  [n, n] = size(A);
   L = zeros(n, n);
 
   %eg
