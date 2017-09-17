@@ -1,8 +1,30 @@
 function x = eg(A, b)
-  [n, n] = size(A);
+  n = rank(A);
   L = zeros(n, n);
 
+  %eg
   for k=1:n-1
+
+    max = 0;
+    indexMax = 0;
+
+    for r=k:n
+      if abs(A(r, k)) > max
+        max = abs(A(r, k));
+        indexMax = r;
+      end
+    end
+    A
+    indexMax
+    k
+    max
+
+    %swap de filas
+    A([indexMax, k], :) = A([k, indexMax], :);
+    b([indexMax, k]) = b([k, indexMax]);
+    A
+    b
+
     for i=k+1:n
       L(i, k) = A(i, k) / A(k, k);
       A(i, k) = 0;
