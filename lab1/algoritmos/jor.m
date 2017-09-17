@@ -1,5 +1,5 @@
 function [x_sol, cant_iter, xk_suc] = jor(A, b, x0, w, max_iter, tolerancia)
-  if nargin ~= 5
+  if nargin ~= 6
     error('Ingrese todos los parametros');
   end
 
