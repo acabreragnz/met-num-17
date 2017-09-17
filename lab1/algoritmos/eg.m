@@ -4,12 +4,12 @@ function x = eg(A, b)
 
   %eg
   for k=1:n-1
-    max = 0;
+    maxVal = 0;
     indexMax = 0;
 
     for r=k:n
-      if abs(A(r, k)) > max
-        max = abs(A(r, k));
+      if abs(A(r, k)) > maxVal
+        maxVal = abs(A(r, k));
         indexMax = r;
       end
     end
