@@ -1,4 +1,4 @@
-function x = eg(A, b)
+function [A, L, b]  = eg(A, b)
   [n, n] = size(A);
   L = zeros(n, n);
 
@@ -25,6 +25,4 @@ function x = eg(A, b)
       A(i, (k+1):n) = A(i, (k+1):n) - L(i, k) * A(k, (k+1):n);
     end
   end
-
-  x = sustitucion_hacia_atras(A, b);
 end
