@@ -1,1 +1,0 @@
-LD = [29 0 0; 39 41 0; -10 -12 24];B = [1; 2; 3];LD_inv = -inv(LD);U = [0 34 -10; 30 0 -12; 0 0 0];QGS = -LD_inv * URGS = LD_inv * Bvp = eig(QGS)
