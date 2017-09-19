@@ -22,13 +22,8 @@ function [x_sol, cant_iter, xk_suc] = sor(A, b, x0, w, max_iter, tolerancia)
       suma_rapida = 0;
       suma_as_jacobi = 0;
 
-      for j = 1:i-1
-        suma_rapida += A(i,j) * xk(j);
-      end
-
-      for j = i+1:n
-        suma_as_jacobi += A(i,j) * x_anterior(j);
-      end
+      suma_rapida += A(i,1:i-1) * xk(1:i-1);
+      suma_as_jacobi += A(i,i+1:n) * x_anterior(i+1:n);
 
       gauss_seidel = (b(i) - suma_rapida - suma_as_jacobi) / A(i, i);
 
