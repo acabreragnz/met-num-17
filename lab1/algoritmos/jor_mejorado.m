@@ -1,5 +1,5 @@
-function [x_sol, cant_iter, xk_suc] = jacobi(A, b, x0, max_iter, tolerancia)
-  if nargin ~= 5
+function [x_sol, cant_iter, xk_suc] = jor_mejorado(A, b, x0, w, max_iter, tolerancia)
+  if nargin ~= 6
     error('Ingrese todos los parametros');
   end
 
@@ -18,11 +18,9 @@ function [x_sol, cant_iter, xk_suc] = jacobi(A, b, x0, max_iter, tolerancia)
   while (k < max_iter & error_absoluto > tolerancia)
 
     # calculo de jacobi en filas
-    for i = 1:n
-      suma_fila = A(i,:) * x_anterior;
-
-      xk(i) = x_anterior(i) + (b(i) - suma_fila) / A(i, i);
-    end
+    suma_fila = A(1:n,:) * x_anterior;
+    jacobi = x_anterior(1:n) + bsxfun(@rdivide, (b(1:n) - suma_fila), diag(A(1:n, 1:n)));
+    xk = jacobi * w + (1 - w) * x_anterior(1:n);
 
     # avanzo el iterador
     k++;
