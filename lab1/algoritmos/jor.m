@@ -31,7 +31,7 @@ function [x_sol, cant_iter, xk_suc] = jor(A, b, x0, w, max_iter, tolerancia)
     k++;
 
     # actualizacion de condicion y solucion
-    error_absoluto = norm(A * xk - b);
+    error_absoluto = norm(xk - x_anterior);
     x_anterior = xk;
     xk_suc = [xk_suc, xk];
   end

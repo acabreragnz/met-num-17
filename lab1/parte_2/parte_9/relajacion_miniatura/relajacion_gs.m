@@ -15,7 +15,7 @@ rho = radio_espectral(q_gauss_seidel(A))
 % TODO: hablar sobre Symmetric successive over-relaxation
 
 tic()
-[l, m, n] = gauss_seidel(A, b, zeros(length(b), 1), 100, 0.1);
+[l, m, n] = gauss_seidel(A, b, zeros(length(b), 1), 1000, 0.0001);
 toc()
 
 % w optimo para aplicar sor
@@ -37,5 +37,5 @@ w_opt
 rho_opt
 
 tic()
-[ll, mm, nn] = sor(A, b, zeros(length(b), 1), w_opt, 100, 0.1);
+[ll, mm, nn] = sor(A, b, zeros(length(b), 1), w_opt, 1000, 0.0001);
 toc()

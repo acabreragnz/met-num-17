@@ -24,13 +24,9 @@ function [x_sol, cant_iter, xk_suc] = gauss_seidel(A, b, x0, max_iter, toleranci
       suma_rapida = 0;
       suma_as_jacobi = 0;
 
-      for j = 1:i-1
-        suma_rapida += A(i,j) * xk(j);
-      end
+      suma_rapida += A(i,1:i-1) * xk(1:i-1);
 
-      for j = i+1:n
-        suma_as_jacobi += A(i,j) * x_anterior(j);
-      end
+      suma_as_jacobi += A(i,i+1:n) * x_anterior(i+1:n);
 
       xk(i) = (b(i) - suma_rapida - suma_as_jacobi) / A(i, i);
     end
@@ -39,7 +35,7 @@ function [x_sol, cant_iter, xk_suc] = gauss_seidel(A, b, x0, max_iter, toleranci
     k++;
 
     # actualizacion de condicion y solucion
-    error_absoluto = norm(A * xk - b);
+    error_absoluto = norm(xk - x_anterior);
 
     x_anterior = xk;
     xk_suc = [xk_suc, xk];
