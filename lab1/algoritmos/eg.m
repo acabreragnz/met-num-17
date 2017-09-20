@@ -1,4 +1,4 @@
-function [H, L, b]  = eg(A, b)
+function [H, L, v]  = eg(A, b)
   [n, n] = size(A);
   L = zeros(n, n);
 
@@ -18,13 +18,14 @@ function [H, L, b]  = eg(A, b)
     A([indexMax, k], :) = A([k, indexMax], :);
     b([indexMax, k]) = b([k, indexMax]);
 
-    for i=k+1:n
-      L(i, k) = A(i, k) / A(k, k);
-      A(i, k) = 0;
-      b(i) = b(i) - L(i,k) * b(k);
-      A(i, (k+1):n) = A(i, (k+1):n) - L(i, k) * A(k, (k+1):n);
-    end
+
+    L(k+1:n, k) = A(k+1:n, k) / A(k, k);
+    A(k+1:n, k) = 0;
+    b(k+1:n) = b(k+1:n) - L(k+1:n,k) * b(k);
+    A(k+1:n, (k+1):n) = A(k+1:n, (k+1):n) - L(k+1:n, k) * A(k, (k+1):n);
+
   end
 
   H = A;
+  v = b;
 end

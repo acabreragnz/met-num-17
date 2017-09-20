@@ -14,12 +14,12 @@ b = [1; 2; 3];
 main_tic = tic()
 
 tic()
-[H, L, b] = eg(A,b);
+[H, L, v] = eg(A,b);
 H
 toc()
 
 tic()
-x = sustitucion_hacia_atras(H, b)
+x = sustitucion_hacia_atras(H, v)
 toc()
 
 toc(main_tic)
