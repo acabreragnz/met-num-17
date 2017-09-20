@@ -28,14 +28,14 @@ function [x_sol, cant_iter, xk_suc] = sor(A, b, x0, w, max_iter, tolerancia)
       gauss_seidel = (b(i) - suma_rapida - suma_as_jacobi) / A(i, i);
 
       % sor
-      xk(i) = gauss_seidel * w + (1 - w) * x_anterior(i);
+      xk(i) = gauss_seidel * w + (1.0 - w) * x_anterior(i);
     end
 
     # avanzo el iterador
     k++;
 
     # actualizacion de condicion y solucion
-    error_absoluto = norm(A * xk - b);
+    error_absoluto = norm(xk - x_anterior);
 
     x_anterior = xk;
     xk_suc = [xk_suc, xk];
