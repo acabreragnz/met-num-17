@@ -30,6 +30,7 @@ end
 w_opt
 rho_opt
 
+% w_optimo es 0.3
 tic()
-[ll, mm, nn] = jor(A, b, zeros(length(b), 1), w_opt, 1000, 0.001);
+[ll, mm, nn] = jor_mejorado(A, b, ones(length(b), 1), w_opt, 1000, 0.01);
 toc()

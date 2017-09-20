@@ -14,27 +14,27 @@ b = sistema.Problem.b;
 roh = radio_espectral(q_gauss_seidel(A))
 
 tic()
-[l, m, n] = gauss_seidel(A, b, zeros(length(b), 1), 100, 0.1);
+[l, m, n] = gauss_seidel(A, b, zeros(length(b), 1), 1000, 0.01);
 toc()
 
-% w optimo para aplicar sor
-w_opt = inf;
-rho_opt = inf;
+% % w optimo para aplicar sor
+% w_opt = inf;
+% rho_opt = inf;
+%
+% % notas de teorico, w_optimo es aquel que minimiza el radio espectral, con
+% % w en (1, 2)
+% for w=1:0.1:2
+%   rho = radio_espectral(q_sor(A, w));
+%   if (rho_opt > rho)
+%     rho_opt = rho;
+%     w_opt = w;
+%   end
+% end
+%
+% w_opt
+% rho_opt
 
-% notas de teorico, w_optimo es aquel que minimiza el radio espectral, con
-% w en (1, 2)
-for w=1:0.1:2
-  rho = radio_espectral(q_sor(A, w));
-
-  if (rho_opt > rho)
-    rho_opt = rho;
-    w_opt = w;
-  end
-end
-
-w_opt
-rho_opt
-
+% w_opt es 1.84101
 tic()
-[ll, mm, nn] = sor(A, b, zeros(length(b), 1), w_opt, 100, 0.1);
+[ll, mm, nn] = sor(A, b, zeros(length(b), 1), 1.84101, 1000, 0.01);
 toc()
