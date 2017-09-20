@@ -15,6 +15,7 @@ main_tic = tic()
 
 tic()
 [H, L, b] = eg(A,b);
+H
 toc()
 
 tic()
@@ -22,5 +23,3 @@ x = sustitucion_hacia_atras(H, b)
 toc()
 
 toc(main_tic)
-
-spy(H);

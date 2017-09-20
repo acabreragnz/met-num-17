@@ -16,8 +16,7 @@ main_tic = tic()
 tic()
 L_trans = chol(A) %Matriz triangular superior (H)
 toc()
-
-L = L_trans'
+L = L_trans';
 
 % Ax = b -> LL'x = b
 % Ly = b    % sustitucion hacia adelante
@@ -29,5 +28,3 @@ x = sustitucion_hacia_atras(L_trans, y)
 toc()
 
 toc(main_tic)
-
-spy(L_trans)
