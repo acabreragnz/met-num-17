@@ -20,10 +20,6 @@ tic()
 [ll, mm, rr] = sor(A, b, zeros(length(b), 1), 1.84101, n, 0.00000001);
 toc()
 
-% for i = 1:n
-%
-% end
-
 hold on;
 grid on;
 
@@ -31,7 +27,6 @@ sol_octave = A \ b;
 
 error_absoluto_gs = zeros(n, 1);
 error_absolut_sor = [];
-distancia_entre_ellos = [];
 
 for i = 1:n
   error_absoluto_gs(i) = norm(r(:, i) - sol_octave);
