@@ -1,4 +1,4 @@
-function [rp, rpi, abscisas, conexs] = mcc(graph, N = 100, lejania_extremos = 1/4)
+function [rp, rpi, abscisas, conexs] = mcc(graph, p, N = 100, lejania_extremos = 1/4)
   graph_dim = size(graph, 1);
 
   abscisas = mcc_abscisas(graph_dim, lejania_extremos);

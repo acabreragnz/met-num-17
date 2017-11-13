@@ -14,10 +14,10 @@ N = 100;
 lejania_extremos = 1/3;
 
 fprintf('Calculando rp para p5 \n')
-[p5_rp, p5_rpi, p5_abs, conexs] = mcc(p5, p, N, lejania_extremos);
+[p5_rp, F_p5] = fmc(p5, p, N, lejania_extremos);
 
 fprintf('Calculando rp para p10 \n')
-[p10_rp, p10_rpi, p10_abs, conexs] = mcc(p10, p, N, lejania_extremos);
+[p10_rp, F_p10] = fmc(p10, p, N, lejania_extremos);
 
 fprintf('Calculando rp para p50 \n')
-[p50_rp, p50_rpi, p50_abs, conexs] = mcc(p50, p, N, lejania_extremos);
+[p50_rp, F_p50] = fmc(p50, p, N, lejania_extremos);
