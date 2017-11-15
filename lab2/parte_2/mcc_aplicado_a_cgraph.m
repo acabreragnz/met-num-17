@@ -10,14 +10,17 @@ c10 = c_graph(10);
 c50 = c_graph(50);
 
 p = 1/2;
-N = 100;
+N = 10;
 lejania_extremos = 1/3;
 
-fprintf('Calculando rp para c5 \n')
-[c5_rp, c5_rpi, c5_abs, conexs] = mcc(c5, p, N, lejania_extremos);
+fprintf('Calculando medida de rendimiento mcc para c5 \n')
+F_c5 = F_c_graph(length(c5));
+medida_rendimiento_mcc(c5, F_c5, N, lejania_extremos)
 
-fprintf('Calculando rp para c10 \n')
-[c10_rp, c10_rpi, c10_abs, conexs] = mcc(c10, p, N, lejania_extremos);
-
-fprintf('Calculando rp para c50 \n')
-[c50_rp, c50_rpi, c50_abs, conexs] = mcc(c50, p, N, lejania_extremos);
+% fprintf('Calculando medida de rendimiento mcc para c10 \n')
+% F_c10 = F_c_graph(length(c10));
+% medida_rendimiento_mcc(c10, F_c10, N, lejania_extremos)
+%
+% fprintf('Calculando medida de rendimiento mcc para c50 \n')
+% F_c50 = F_c_graph(length(c50));
+% medida_rendimiento_mcc(c50, F_c50, N, lejania_extremos)

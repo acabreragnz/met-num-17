@@ -9,15 +9,16 @@ p5 = p_graph(5);
 p10 = p_graph(10);
 p50 = p_graph(50);
 
-p = 1/2;
-N = 100;
-lejania_extremos = 1/3;
+N = 10;
 
-fprintf('Calculando rp para p5 \n')
-[p5_rp, F_p5] = fmc(p5, p, N, lejania_extremos);
+fprintf('Calculando medida de rendimiento fcm para p5 \n')
+F_p5 = F_p_graph(length(p5));
+mrp5 = medida_rendimiento_fmc(p5, F_p5, N)
 
-fprintf('Calculando rp para p10 \n')
-[p10_rp, F_p10] = fmc(p10, p, N, lejania_extremos);
+fprintf('Calculando medida de rendimiento fcm para p10 \n')
+F_p10 = F_p_graph(length(p10));
+mrp10 = medida_rendimiento_fmc(p10, F_p10, N)
 
-fprintf('Calculando rp para p50 \n')
-[p50_rp, F_p50] = fmc(p50, p, N, lejania_extremos);
+fprintf('Calculando medida de rendimiento fcm para p50 \n')
+F_p50 = F_p_graph(length(p50));
+mrp50 = medida_rendimiento_fmc(p50, F_p50, N)
