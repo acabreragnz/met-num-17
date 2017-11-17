@@ -9,9 +9,8 @@ c5 = c_graph(5);
 c10 = c_graph(10);
 c50 = c_graph(50);
 
-p = 1/2;
-N = 10;
-lejania_extremos = 1/3;
+N = 100;
+lejania_extremos = 0.0025;
 
 fprintf('Calculando medida de rendimiento mcc para c5 \n')
 F_c5 = F_c_graph(length(c5));

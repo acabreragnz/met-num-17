@@ -9,9 +9,8 @@ p5 = p_graph(5);
 p10 = p_graph(10);
 p50 = p_graph(50);
 
-p = 1/2;
-N = 10;
-lejania_extremos = 1/3;
+N = 100;
+lejania_extremos = 0.0025;
 
 fprintf('Calculando medida de rendimiento mcc para p5 \n')
 F_p5 = F_p_graph(length(p5));
