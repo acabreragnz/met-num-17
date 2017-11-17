@@ -16,7 +16,7 @@ lejania_extremos = 1/3;
 fprintf('Calculando medida de rendimiento mcc para p5 \n')
 F_p5 = F_p_graph(length(p5));
 [c_newton_p5, x_newton_p5] = mcc(p5, N, lejania_extremos);
-mrp5 = medida_rendimiento_mcc(F_p5, c_newton_p5, x_newton_p5);
+mrp5 = medida_rendimiento_mcc(F_p5, c_newton_p5, x_newton_p5)
 
 % fprintf('Calculando medida de rendimiento mcc para p10 \n')
 % F_p10 = F_p_graph(length(p10));

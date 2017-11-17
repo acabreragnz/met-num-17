@@ -4,8 +4,8 @@
 
 function F = fmc(G, N)
   % Indexamos las aristas utilizando el triangulo superior de G porque el grafo es no dirigido
-  aristas = find(triu(G));
-  m = rows(aristas);
+  aristas = find(triu(G, 1));
+  m = numEdges(G) - selfLoops(G);
 
   % Para cada i, calcular el coeficiente Fi
   for i=1:m
@@ -22,7 +22,7 @@ function F = fmc(G, N)
       % Borrar las aristas seleccionadas y recomponer el subgrafo
       subG = triu(G);
       subG(aristas_borrar) = 0;
-      subG = subG + subG.';
+      subG = subG + tril(subG.', -1);
 
       % Verificar si el subgrafo es conexo y sumarlo a Fi
       F(i) += isConnected(subG);
