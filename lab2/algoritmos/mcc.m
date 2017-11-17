@@ -1,4 +1,4 @@
-function [rp, rpi, abscisas, conexs] = mcc(graph, p, N = 100, lejania_extremos = 1/4)
+function [coef_interpol, abscisas, rpi, conexs] = mcc(graph, N = 100, lejania_extremos = 1/4)
   graph_dim = size(graph, 1);
 
   abscisas = mcc_abscisas(graph_dim, lejania_extremos);
@@ -12,11 +12,8 @@ function [rp, rpi, abscisas, conexs] = mcc(graph, p, N = 100, lejania_extremos =
     conexs = [conexs; conexs_actual];
   end
 
-  c = diferencias_divididas(abscisas, rpi)(1, :)
-  c_rounded = hilbert_round(c);
-
-  % deberia dar entre 0 y 1, hay algo mal :/
-  rp = newton_interpol_from_coef(abscisas, c_rounded, p);
+  c = diferencias_divididas(abscisas, rpi)(1, :);
+  coef_interpol = hilbert_round(c);
 end
 
 function [rpi, conexs] = estimate_rpi(graph, probability, N)
@@ -35,6 +32,5 @@ function conexs = random_conexity_graphs(graph, probability, N)
 end
 
 function r = hilbert_round(x)
-  x
   r = x; % hay que implementarlo
 end

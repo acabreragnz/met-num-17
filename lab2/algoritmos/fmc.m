@@ -2,8 +2,7 @@
 % del grafo G aproximado mediante el método F-Monte Carlo con N iteraciones
 % G se expresa mediante su matriz de adyacencia
 
-function [rp, F] = fmc(G, p, N)
-
+function F = fmc(G, N)
   % Indexamos las aristas utilizando el triangulo superior de G porque el grafo es no dirigido
   aristas = find(triu(G));
   m = rows(aristas);
@@ -44,6 +43,4 @@ function [rp, F] = fmc(G, p, N)
   % Esto es, F0 = F(1), F1 = F(2), etc.
 
   F = [1, F];
-
-  rp = rp(p, F);
 endfunction
