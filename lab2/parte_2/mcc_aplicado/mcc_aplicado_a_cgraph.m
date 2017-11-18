@@ -2,8 +2,8 @@ more off;
 clear;
 format long;
 
-addpath(genpath('./../algoritmos'));
-addpath(genpath('./../grafos'));
+addpath(genpath('./../../algoritmos'));
+addpath(genpath('./../../grafos'));
 
 c5 = c_graph(5);
 c10 = c_graph(10);

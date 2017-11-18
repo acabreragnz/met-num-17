@@ -2,10 +2,8 @@ function [coef_interpol, abscisas, rpi, conexs] = mcc(graph, N = 100, lejania_ex
   graph_dim = size(graph, 1);
 
   if strcmp(tipo_abscisas, "equi")
-    fprintf("Usando abscisas equi-espaciadas\n");
     abscisas = mcc_abscisas(graph_dim, lejania_extremos);
   elseif strcmp(tipo_abscisas, "chevy")
-    fprintf("Usando abscisas chevy\n");
     abscisas = chevyshev_abscisas(graph_dim, lejania_extremos);
   else
     error('tipo de abscisas invalido');
@@ -24,13 +22,10 @@ function [coef_interpol, abscisas, rpi, conexs] = mcc(graph, N = 100, lejania_ex
   c = diferencias_divididas(abscisas, rpi)(1, :);
 
   if strcmp(tipo_redondeo, "hilbert")
-    fprintf("Usando redondeo hilbert\n");
     coef_interpol = redondeo_hilbert(abscisas, c)';
   elseif strcmp(tipo_redondeo, "simple")
-    fprintf("Usando redondeo simple\n");
     coef_interpol = round(c);
   elseif strcmp(tipo_redondeo, "none")
-    fprintf("No se redondean los coeficientes\n");
     coef_interpol = c;
   else
     error('tipo de redondeo invalido');
