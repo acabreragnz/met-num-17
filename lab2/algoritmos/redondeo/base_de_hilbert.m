@@ -3,10 +3,9 @@
 function base = base_de_hilbert(n)
 
   base = zeros(n+1);
-  base(1,n+1) = 1;
-
-  for i = 2:n+1
-    base(i,1:i) = shifted_legendre_poly(i-1);
+  for i = 0:n
+    
+    base(i+1,end-(i):end) = sqrt(2*i+1)*shifted_legendre_poly(i);
   endfor
   base = base.';
 
