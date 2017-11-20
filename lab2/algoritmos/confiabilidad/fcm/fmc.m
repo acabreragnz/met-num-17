@@ -5,15 +5,16 @@
 function F = fmc(G, N)
   % Indexamos las aristas utilizando el triangulo superior de G porque el grafo es no dirigido
   aristas = find(triu(G, 1));
-  m = numEdges(G) - selfLoops(G);
+  m = numEdges(G) - selfLoops(G)
 
   % Para cada i, calcular el coeficiente Fi
   for i=1:m
-
+    i
     F(i) = 0;
 
 	% Sortear N subgrafos resultantes de quitar i aristas de G
     for k=1:N
+      k
 
       % Seleccionar aleatoriamente i aristas dentro de las m
       x = randperm(m,i);

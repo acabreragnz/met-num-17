@@ -4,5 +4,5 @@ function graph = p_graph(n)
   end
 
   v = ones(1, n);
-  graph = diag(v) + diag(v(1:n-1), 1) + diag(v(1:n-1), -1);
+  graph = diag(v(1:n-1), 1) + diag(v(1:n-1), -1);
 end
