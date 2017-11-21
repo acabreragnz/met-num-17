@@ -9,12 +9,12 @@ p5 = p_graph(5);
 p10 = p_graph(10);
 p50 = p_graph(50);
 
-rango_N = 1:10;
+rango_N = 1:100;
 lejania_extremos = 0.0025;
 tipo_redondeo = 'none';
 tipo_abscisas = 'equi';
 
-fprintf('Calculando medida de rendimiento fcm para p5 \n')
+fprintf('Calculando medida de rendimiento mcc para p5 \n')
 for i = rango_N
   i
   F_p5 = F_p_graph(length(p5));
@@ -29,7 +29,7 @@ ylabel('Confiabilidad');
 xlabel('Sorteo N');
 
 rango_N = 1:100;
-fprintf('Calculando medida de rendimiento fcm para p10 \n')
+fprintf('Calculando medida de rendimiento mcc para p10 \n')
 for i = rango_N
   i
   F_p10 = F_p_graph(length(p10));
@@ -43,10 +43,10 @@ title('Medida de rendimiento (mr) de mcc para grafos tipo P10')
 ylabel('Confiabilidad');
 xlabel('Sorteo N');
 
-rango_N = 1:50;
+rango_N = 1:100;
 tipo_abscisas = 'equi';
 
-fprintf('Calculando medida de rendimiento fcm para p50 \n')
+fprintf('Calculando medida de rendimiento mcc para p50 \n')
 for i = rango_N
   i
   F_p50 = F_p_graph(length(p50));

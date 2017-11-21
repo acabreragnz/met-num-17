@@ -11,7 +11,7 @@ lejania_extremos = 0.25;
 tipo_redondeo = 'none';
 tipo_abscisas = 'equi';
 
-rango_p = 0:0.01:1;
+rango_p = 0.15:0.01:0.90;
 
 index = 0;
 for p = rango_p

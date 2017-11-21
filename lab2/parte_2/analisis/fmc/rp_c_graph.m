@@ -20,6 +20,6 @@ end
 
 % graficando
 plot(rango_p, confiab_c10, 'b');
-title('Confiabilidad (Rgp) de mcc para grafo tipo C10')
+title('Confiabilidad (Rgp) de fmc para grafo tipo C10')
 ylabel('Confiabilidad');
 xlabel('probabilidad p de funcionamiento');

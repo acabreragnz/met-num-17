@@ -1,14 +1,17 @@
-function result = tutte_pol(G, x, y)
-  [i, j] = elegir_abscisa(G);
+function result = deletion_contraction(G, p)
+  dim = size(G)(1);
 
-  if (i == -1) && (j == -1)
+  if isTree(G)
+    cantidad_aristas = numEdges(G) - selfLoops(G);
+    result = p^numEdges(G);
+  elseif !isConnected(G)
+    result = 0;
+  elseif dim == 1
     result = 1;
-  elseif is_bridge(G, i, j)
-    result = x * tutte_pol(eliminar_arista(G, i, j), x, y);
-  elseif is_loop(i, j)
-    result = y * tutte_pol(contraer_arista(G, i, j), x, y);
   else
-    result = (1-y) * tutte_pol(eliminar_arista(G, i, j), x, y) + y * tutte_pol(contraer_arista(G, i, j), x, y);
+    [i, j] = elegir_abscisa(G);
+
+    result = (1-p) * deletion_contraction(eliminar_arista(G, i, j), p) + p * deletion_contraction(contraer_arista(G, i, j), p);
   end
 end
 
@@ -16,15 +19,22 @@ function [i, j] = elegir_abscisa(G)
   i = -1;
   j = -1;
 
-  if numEdges(G) > 0
+  numero_aristas = numEdges(G) - selfLoops(G);
+
+  if numero_aristas > 0
     aristas = find(G);
     random_num = randperm(length(aristas), 1);
     arista_elegida = aristas(random_num);
 
     i = ceil(arista_elegida / rows(G));
     j = mod(arista_elegida - 1, rows(G)) + 1;
+
+    if (i == j)
+      [i, j] = elegir_abscisa(G);
+    end
   end
 end
+
 
 function value = is_loop(i, j)
   value = i == j;
@@ -75,6 +85,22 @@ function result = contraer_arista(G, i, j)
 
     result = g_aux;
   end
+end
+
+function A = apagar_multi_links(A)
+  dim = size(A)(1);
+
+  for i=1:dim
+    for j=1:dim
+      if (A(i, j) > 1)
+        A(i, j) = 1;
+      end
+    end
+  end
+end
+
+function A = apagar_diagonal(A)
+  A = A(logical(eye(size(A)))) = 0
 end
 
 function result = eliminar_arista(G, i, j)

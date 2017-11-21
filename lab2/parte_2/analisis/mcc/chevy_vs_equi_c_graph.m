@@ -32,7 +32,7 @@ if strcmp(run, 'c10')
   % graficando
   figure
   plot(rango_N, equi_mrc10, 'b');
-  title('Medida de rendimiento (mr) de fmc para grafos tipo P')
+  title('Medida de rendimiento (mr) de fmc para grafos tipo C')
   hold on
 
   plot(rango_N, chevy_mrc10, 'g');
@@ -64,13 +64,13 @@ if strcmp(run, 'c50')
   % graficando
   figure
   plot(rango_N, equi_mrc50, 'b');
-  title('Medida de rendimiento (mr) de fmc para grafos tipo P')
+  title('Medida de rendimiento (mr) de fmc para grafos tipo C')
   hold on
 
   plot(rango_N, chevy_mrc50, 'g');
   ylabel('Medida de rendimiento');
   xlabel('Sorteo N');
-  legend('mr de mcc con abscisas equi en c10', 'mr de mcc con abscisas chevy en c10');
+  legend('mr de mcc con abscisas equi en c50', 'mr de mcc con abscisas chevy en c50');
 
   hold off
 end

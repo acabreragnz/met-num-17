@@ -11,21 +11,21 @@ p50 = p_graph(50);
 
 rango_N = 1:100;
 
-fprintf('Calculando medida de rendimiento fcm para p5 \n')
+fprintf('Calculando medida de rendimiento fmc para p5 \n')
 for i = rango_N
   F_p5 = F_p_graph(length(p5));
   F_fmc_p5 = fmc(p5, i);
   mrp5(i) = medida_rendimiento_fmc(F_p5, F_fmc_p5);
 end
 
-fprintf('Calculando medida de rendimiento fcm para p10 \n')
+fprintf('Calculando medida de rendimiento fmc para p10 \n')
 for i = rango_N
   F_p10 = F_p_graph(length(p10));
   F_fmc_p10 = fmc(p10, i);
   mrp10(i) = medida_rendimiento_fmc(F_p10, F_fmc_p10);
 end
 
-fprintf('Calculando medida de rendimiento fcm para p50 \n')
+fprintf('Calculando medida de rendimiento fmc para p50 \n')
 for i = rango_N
   F_p50 = F_p_graph(length(p50));
   F_fmc_p50 = fmc(p50, i);

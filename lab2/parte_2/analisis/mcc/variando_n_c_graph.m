@@ -9,7 +9,7 @@ c5 = c_graph(5);
 c10 = c_graph(10);
 c50 = c_graph(50);
 
-rango_N = 1:10;
+rango_N = 1:100;
 lejania_extremos = 0.0025;
 tipo_redondeo = 'none';
 tipo_abscisas = 'equi';

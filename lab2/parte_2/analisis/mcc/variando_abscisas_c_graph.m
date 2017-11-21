@@ -18,6 +18,8 @@ run = 'c50'
 if strcmp(run, 'c5')
   fprintf('Calculando medida de rendimiento fcm para c5 \n')
   index = 0;
+  rango_lejania_extremos = 0:0.01:0.25;
+
   for i = rango_lejania_extremos
     i
     index++;
@@ -54,7 +56,7 @@ if strcmp(run, 'c10')
 end
 
 if strcmp(run, 'c50')
-  rango_lejania_extremos = 0:0.1:0.4;
+  rango_lejania_extremos = 0.2:0.01:0.4;
   tipo_abscisas = 'equi';
 
   fprintf('Calculando medida de rendimiento fcm para c50 \n')

@@ -35,16 +35,16 @@ end
 % graficando
 figure
 plot(rango_N, mrc5, 'b');
-title('Medida de rendimiento (mr) de fmc para grafos tipo P')
+title('Medida de rendimiento (mr) de fmc para grafos tipo C')
 hold on
 
 plot(rango_N, mrc10, 'g');
 plot(rango_N, mrc50, 'r');
 ylabel('Confiabilidad');
 xlabel('Sorteo N');
-legend('mr de fmc en p5',
-  'mr de fmc en p10',
-  'mr de fmc en p50'
+legend('mr de fmc en c5',
+  'mr de fmc en c10',
+  'mr de fmc en c50'
 );
 
 hold off
